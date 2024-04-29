@@ -19,7 +19,7 @@ def chat(model):
 
         while True:
             ## Generate initial prompt for PDB ID and property
-            print("Please provide a PDB ID and property of interest to you, and chain ID for which the property is to be calculated.")
+            print("\nMolGemini: Please provide a PDB ID and property of interest to you, and chain ID for which the property is to be calculated.")
 
             ## Get user input
             user_input = input("You: ")
@@ -36,6 +36,15 @@ def chat(model):
             if not _check_affirmative(model, user_input):
                 print("I did not get the correct PDB ID or property. Let's try again!")
                 continue
+            
+            print("MolGemini: Do you also want me to print the code I used for the analysis?")
+
+            ## Take user response
+            user_input = input("You: ")
+            if _continue_chat(user_input) is False: break
+
+            ## Store whether code is to be shown to user
+            to_show_code = _check_affirmative(model, user_input)
 
             # Confirm calculation
             print("MolGemini: Great! Downloading PDB file...")
@@ -47,7 +56,8 @@ def chat(model):
                 model,
                 pdb_file,
                 property_to_calculate,
-                chain_id
+                chain_id,
+		to_show_code=to_show_code,
             )
             # _make_good_output(model, pdb_id, property_to_calculate, output)
 

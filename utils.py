@@ -21,6 +21,9 @@ def _extract_and_print_pdb_and_property(model, user_input) -> list:
     return pdb_id, prop, chain_id
 
 def _check_affirmative(model, user_input) -> bool:
+    if user_input.lower() == 'no':
+        return False
+
     # Ask model if response is affirmative
     response = model.generate_content(f'Is this response affirmative? Say True or False: {user_input}')
 
