@@ -29,7 +29,7 @@ def _write_code_for_property_and_file(
         pdb_file, 
         property_to_calculate, 
         chain_id,
-	to_show_code=False, 
+    	to_show_code=False, 
         n_trial=0, 
         n_max_attempts=8
         ):
@@ -63,13 +63,15 @@ def _write_code_for_property_and_file(
                 print('\nMolGemini: Since you asked for my magic to be displayed to you, see the code I used for this calculation...\n')
                 print(analysis_code)
             print('*** Analysis completed for this request ***\n\n ~~~ New request begins ~~~\n\n')
+        else:
+            print('MolGemini: Sorry, I could not compute the required property. Sometimes, this happens due to my code not being perfect (just like you humans, I must say! Let us start over again and hopefully get it right')
     except:
         _write_code_for_property_and_file(
             model, 
             pdb_file, 
             property_to_calculate,
             chain_id,
-	    to_show_code=to_show_code, 
+	        to_show_code=to_show_code, 
             n_trial=n_trial+1
         )
 
