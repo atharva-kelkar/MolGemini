@@ -44,7 +44,7 @@ def _write_code_for_property_and_file(
             # analysis_prompt=f'Please write code using MDAnalysis to perform the computation for the PDB file {pdb_file}'\
             #      + f'and property {property_to_calculate}, for all chains'
             analysis_prompt = 'Please write code using MDTraj to perform the computation for the given PDB, Property, and chain ID.'\
-                + 'Print output as "The value of the property is..." and rounded up to 3 decimal places.'
+                + 'Print output as "The value of the property is..." and rounded up to 3 decimal places with the units displayed.'
             # analysis_prompt = 'Write a function using MDAnalysis to use a given PDB file to return the given property, selecting all atoms.'
             # Write code
             pdb_analysis = model.generate_content(
