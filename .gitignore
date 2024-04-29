@@ -1,2 +1,4 @@
 *.pdb
 .ipynb_checkpoints/
+__pycache__/
+files/
