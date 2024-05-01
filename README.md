@@ -4,7 +4,18 @@ A chat bot that helps you with your molecular dynamics data needs.
 
 ### Getting started
 
-To get started, register on Google Cloud make a Google Cloud Project. You can follow the instructions in this video: https://www.youtube.com/watch?v=tCpGtGKZKQc
+#### Installing required packages
+
+For running the scripts in this repository, install the following packages
+
+```bash
+conda install -c conda-forge google-cloud-platform
+conda install -c conda-forge mdtraj mdanalysis
+```
+
+#### Registering with Google Cloud
+
+To get started, register on Google Cloud make a Google Cloud Project. You can follow the instructions in [this video](https://www.youtube.com/watch?v=tCpGtGKZKQc)
 
 Once you have the json key downloaded, use the following command to export it as an environment variable
 
@@ -12,6 +23,10 @@ Once you have the json key downloaded, use the following command to export it as
 
 ### Using MolGemini
 
-In the trial phase, you can simply launch the chat script using
+You can try out MolGemini simply launch the chat interface using
 
 `python chat_script.py`
+
+### Functionalities
+
+MolGemini interfaces with the Protein Data Bank and uses Gemini's code-writing ability to calculate any property for any protein, given its PDB ID.
