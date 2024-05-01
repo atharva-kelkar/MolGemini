@@ -1,6 +1,6 @@
 # MolGemini
 
-A chat bot that helps you with your molecular dynamics data needs.
+A chat bot that helps you with your protein structure analysis needs.
 
 ### Getting started
 
